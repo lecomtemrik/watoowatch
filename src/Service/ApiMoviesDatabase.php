@@ -15,7 +15,7 @@ class ApiMoviesDatabase
     {
         $response = $this->client->request(
             'GET',
-            $this->apiMoviesRandomBase.'?limit=8&year=2022&list='.$list
+            $this->apiMoviesRandomBase.'?limit=5&year=2022&list='.$list
             , [
                 'headers' => [
                     'X-RapidAPI-Key' => $_ENV['RAPIDAPI_KEY'],

@@ -4,47 +4,35 @@
 
 {% block body %}
 
-{#    {{ dump(randomMovies) }}#}
+    <section class="relative w-full max-w-md px-5 py-4 mt-10 mx-auto">
+        <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </span>
+            <input type="text" class="w-full py-3 pl-10 pr-4 text-gray-700 bg-gray-900 border dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Chercher un titre">
+        </div>
+    </section>
 
-    <section class="text-gray-400 bg-gray-900 body-font">
+    <section class="text-gray-400 body-font">
         <div class="container px-5 py-24 mx-auto">
 
             <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="text-2xl font-medium title-font mb-4 text-white">Films populaires de 2022</h1>
-{#                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>#}
+                <h1 class="text-2xl font-medium title-font mb-4 text-white">Nouveautés</h1>
             </div>
 
             <div class="flex flex-wrap -m-4">
                 {% for randomMovie in randomMovies %}
 
-                <div class="p-4 lg:w-1/4 md:w-1/2">
+                <div class="p-4 lg:w-1/5 md:w-1/2">
                     <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="{{ randomMovie.primaryImage.url }}">
+                        <img alt="team" class="flex-shrink-0 w-full h-44 object-cover object-center mb-4" src="{{ randomMovie.primaryImage.url }}">
                         <div class="w-full">
                             <h2 class="title-font font-medium text-lg text-white">{{ randomMovie.titleText.text }}</h2>
-                            <h3 class="text-gray-500 mb-3">{{ randomMovie.releaseDate.day }}/{{ randomMovie.releaseDate.month }}/{{ randomMovie.releaseDate.year }}</h3>
-{#                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>#}
-{#                            <span class="inline-flex">#}
-{#                              <a class="text-gray-700">#}
-{#                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">#}
-{#                                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>#}
-{#                                </svg>#}
-{#                              </a>#}
-{#                              <a class="ml-2 text-gray-700">#}
-{#                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">#}
-{#                                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>#}
-{#                                </svg>#}
-{#                              </a>#}
-{#                              <a class="ml-2 text-gray-700">#}
-{#                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">#}
-{#                                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>#}
-{#                                </svg>#}
-{#                              </a>#}
-{#                            </span>#}
                         </div>
                     </div>
                 </div>
-{#                    {{ dump(randomMovie.primaryImage.url) }}#}
                 {% endfor %}
 
             </div>
@@ -52,122 +40,98 @@
     </section>
 
 
-    <section class="text-gray-400 bg-gray-900 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="text-2xl font-medium title-font mb-4 text-white">Prochaines sorties au cinéma</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
-            </div>
-            <div class="flex flex-wrap -m-4">
-                <div class="p-4 lg:w-1/4 md:w-1/2">
-                    <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200">
-                        <div class="w-full">
-                            <h2 class="title-font font-medium text-lg text-white">Alper Kamu</h2>
-                            <h3 class="text-gray-500 mb-3">UI Developer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-flex">
-              <a class="text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>
-              </a>
-            </span>
-                        </div>
+    <section>
+        <div class="container border border-white bg-gray-900  mb-28 mx-auto flex flex-wrap">
+
+            <div class="container px-6 py-10 mx-auto animate-pulse">
+{#                <h1 class="w-48 h-2 mx-auto bg-gray-600 rounded-lg dark:bg-gray-700"></h1>#}
+
+                <p class="w-64 h-2 mx-auto mt-4 text-gray-50 rounded-lg dark:bg-gray-700">Choisir 5 films pour les tirer au sort</p>
+{#                <p class="w-64 h-2 mx-auto mt-4 bg-gray-600 rounded-lg sm:w-80 dark:bg-gray-700"></p>#}
+
+                <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-5 lg:grid-cols-3">
+                    <div class="w-full ">
+                        <div class="w-full h-64 bg-gray-600 rounded-lg dark:bg-gray-600"></div>
+
+                        <h1 class="w-56 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></h1>
+                        <p class="w-24 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></p>
                     </div>
-                </div>
-                <div class="p-4 lg:w-1/4 md:w-1/2">
-                    <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
-                        <div class="w-full">
-                            <h2 class="title-font font-medium text-lg text-white">Holden Caulfield</h2>
-                            <h3 class="text-gray-500 mb-3">UI Developer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-flex">
-              <a class="text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>
-              </a>
-            </span>
-                        </div>
+
+                    <div class="w-full ">
+                        <div class="w-full h-64 bg-gray-600 rounded-lg dark:bg-gray-600"></div>
+
+                        <h1 class="w-56 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></h1>
+                        <p class="w-24 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></p>
                     </div>
-                </div>
-                <div class="p-4 lg:w-1/4 md:w-1/2">
-                    <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202">
-                        <div class="w-full">
-                            <h2 class="title-font font-medium text-lg text-white">Atticus Finch</h2>
-                            <h3 class="text-gray-500 mb-3">UI Developer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-flex">
-              <a class="text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>
-              </a>
-            </span>
-                        </div>
+
+                    <div class="w-full ">
+                        <div class="w-full h-64 bg-gray-600 rounded-lg dark:bg-gray-600"></div>
+
+                        <h1 class="w-56 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></h1>
+                        <p class="w-24 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></p>
                     </div>
-                </div>
-                <div class="p-4 lg:w-1/4 md:w-1/2">
-                    <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/203x203">
-                        <div class="w-full">
-                            <h2 class="title-font font-medium text-lg text-white">Henry Letham</h2>
-                            <h3 class="text-gray-500 mb-3">UI Developer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-flex">
-              <a class="text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-2 text-gray-700">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>
-              </a>
-            </span>
-                        </div>
+
+                    <div class="w-full ">
+                        <div class="w-full h-64 bg-gray-600 rounded-lg dark:bg-gray-600"></div>
+
+                        <h1 class="w-56 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></h1>
+                        <p class="w-24 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></p>
+                    </div>
+
+                    <div class="w-full ">
+                        <div class="w-full h-64 bg-gray-600 rounded-lg dark:bg-gray-600"></div>
+
+                        <h1 class="w-56 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></h1>
+                        <p class="w-24 h-2 mt-4 bg-gray-600 rounded-lg dark:bg-gray-700"></p>
                     </div>
                 </div>
             </div>
+
+
+{#            <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">#}
+{#                <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">#}
+{#                    <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-gray-800">#}
+{#                        <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44" r="15.5"></circle>#}
+{#                        <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44" r="44"></circle>#}
+{#                        <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44" r="37.5"></circle>#}
+{#                        <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44" r="29.5"></circle>#}
+{#                        <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44" r="22.5"></circle>#}
+{#                    </svg>#}
+{#                </div>#}
+{#                <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-5">#}
+{#                    <div class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">#}
+{#                        <p class="font-semibold text-gray-200">#}
+{#                            Sed ut perspiciatis unde omnis iste#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">#}
+{#                        <p class="font-semibold text-gray-200">#}
+{#                            Well, the way they make shows is#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">#}
+{#                        <p class="font-semibold text-gray-200">#}
+{#                            Some don't, become nothing again#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">#}
+{#                        <p class="font-semibold text-gray-200">#}
+{#                            Pommy ipsum smeg head whizz morris#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">#}
+{#                        <p class="font-semibold text-gray-200">#}
+{#                            Pommy ipsum smeg head whizz morris#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+
         </div>
     </section>
+
+
+
+
 {% endblock %}
