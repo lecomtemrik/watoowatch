@@ -18,13 +18,13 @@ class HomeController extends AbstractController
     public function index(ApiMoviesDatabase $apiMoviesDatabase): Response
     {
 
-        $randomMovies = $apiMoviesDatabase->getRandomMovies("most_pop_movies");
+        $randomMovies = $apiMoviesDatabase->getRandomMovies();
 
 //        var_dump($randomMovies->results);
 //        dd();
 
         return $this->render('home/index.html.twig', [
-            'randomMovies' => $randomMovies->results,
+            'randomMovies' => $randomMovies->result,
         ]);
     }
 }

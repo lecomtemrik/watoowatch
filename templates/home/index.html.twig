@@ -23,17 +23,19 @@
             </div>
 
             <div class="flex flex-wrap -m-4">
-                {% for randomMovie in randomMovies %}
 
-                <div class="p-4 lg:w-1/5 md:w-1/2">
-                    <div class="h-full flex flex-col items-center text-center">
-                        <img alt="team" class="flex-shrink-0 w-full h-44 object-cover object-center mb-4" src="{{ randomMovie.primaryImage.url }}">
-                        <div class="w-full">
-                            <h2 class="title-font font-medium text-lg text-white">{{ randomMovie.titleText.text }}</h2>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+                {{ dump(randomMovies) }}
+
+{#                {% for randomMovie in randomMovies %}#}
+{#                <div class="p-4 lg:w-1/5 md:w-1/2">#}
+{#                    <div class="h-full flex flex-col items-center text-center">#}
+{#                        <img alt="team" class="flex-shrink-0 w-full h-44 object-cover object-center mb-4" src="{{ randomMovie.primaryImage.url }}">#}
+{#                        <div class="w-full">#}
+{#                            <h2 class="title-font font-medium text-lg text-white">{{ randomMovie.titleText.text }}</h2>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {% endfor %}#}
 
             </div>
         </div>
