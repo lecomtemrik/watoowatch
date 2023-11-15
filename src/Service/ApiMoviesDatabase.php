@@ -11,11 +11,13 @@ class ApiMoviesDatabase
         $this->apiMoviesRandomBase = $apiMoviesRandomBase;
     }
 
-    public function getRandomMovies($list)
+    public function getRandomMovies()
     {
+        //https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability
         $response = $this->client->request(
             'GET',
-            $this->apiMoviesRandomBase.'?limit=5&year=2022&list='.$list
+//            $this->apiMoviesRandomBase.'?limit=5&year=2022&list='.$list
+            $this->apiMoviesRandomBase.'?change_type=new&services=netflix&target_type=series&country=fr&output_language=fr'
             , [
                 'headers' => [
                     'X-RapidAPI-Key' => $_ENV['RAPIDAPI_KEY'],
